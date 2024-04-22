@@ -6,7 +6,7 @@ const app = express();
 require('dotenv').config();
 app.use(express.urlencoded({extended:false}));
 const PASSWORD = process.env.PASSWORD
-const PORT = process.env.PORT||3000
+const PORT = process.env.PORT
 
 
 mongoose.connect(`mongodb+srv://abhik16chakrabortty:${PASSWORD}@cluster0.iuakazn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
