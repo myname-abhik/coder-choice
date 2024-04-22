@@ -28,10 +28,10 @@ app.get('/',(req, res) => {
 })
 app.post('/api/v1/subscribers', async(req, res) => {
   const {email} = req.body;
-//   await Email.create({
-//     email:email
+   await Email.create({
+    email:email
    
-// });
+});
 
   console.log(email);
 res.redirect(req.get('origin'));
