@@ -9,7 +9,7 @@ const PASSWORD = process.env.PASSWORD
 const PORT = process.env.PORT
 
 
-mongoose.connect(`mongodb+srv://vercel-admin-user-6626e052f8bd661241c01cd1:DN2gDMPUcKmw00ni@cluster0.iuakazn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`)
+mongoose.connect(`mongodb+srv://abhik16chakrabortty:${PASSWORD}@cluster0.iuakazn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
 .then(()=>{
     console.log('Connected to MongoDB');
   })
@@ -32,10 +32,8 @@ app.post('/api/v1/subscribers', async(req, res) => {
     email:email
    
 });
-
-  console.log(email);
+console.log(email);
 res.redirect(req.get('origin'));
-  res.json({val:"ok"})
   
 });
 
