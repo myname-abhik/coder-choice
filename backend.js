@@ -9,7 +9,7 @@ const PASSWORD = process.env.PASSWORD
 const PORT = process.env.PORT
 
 
-mongoose.connect(`${MONGODB_URI}`)
+mongoose.connect(`mongodb+srv://abhik16chakrabortty:${PASSWORD}@cluster0.iuakazn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
 .then(()=>{
     console.log('Connected to MongoDB');
   })
