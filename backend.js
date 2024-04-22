@@ -27,7 +27,7 @@ app.get('/',(req, res) => {
     res.send("hello world");
 })
 app.post('/api/v1/subscribers', async(req, res) => {
-//   const {email} = req.body;
+  const {email} = req.body;
 //   await Email.create({
 //     email:email
    
