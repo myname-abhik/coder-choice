@@ -1,3 +1,4 @@
+const cors = require('cors');
 const express  = require('express');
 const mongoose = require('mongoose');
 
@@ -5,6 +6,8 @@ const mongoose = require('mongoose');
 const app = express();
 require('dotenv').config();
 app.use(express.urlencoded({extended:false}));
+app.use(cors());
+app.use(express.json());
 const PASSWORD = process.env.PASSWORD
 const PORT = process.env.PORT
 
@@ -27,14 +30,14 @@ app.get('/',(req, res) => {
     res.send("hello world");
 })
 app.post('/api/v1/subscribers', async(req, res) => {
-  const {email} = req.body;
+  const email = req.body.email;
    await Email.create({
     email:email
    
-});
-
+})
+return res.json({url:"YOUR EMAIL HAS BEEN Submitted"});
   
-//   res.json({val:"ok"})
+  console.log(email)
   
 });
 
