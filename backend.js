@@ -33,8 +33,7 @@ app.post('/api/v1/subscribers', async(req, res) => {
    
 });
 
-  console.log(email);
-res.redirect(req.get('origin'));
+  
 //   res.json({val:"ok"})
   
 });
