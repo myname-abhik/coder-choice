@@ -26,8 +26,10 @@ const useSchema = new mongoose.Schema({
         required: true
     }},{timestamps: true});
 const Email = mongoose.model('Email',useSchema);
-app.get('/',(req, res) => {
-    res.send("hello world");
+app.get('/',async (req, res) => {
+    const alluser = await Email.find({});
+    // res.send(alluser);
+    res.send(alluser);
 })
 app.post('/api/v1/subscribers', async(req, res) => {
   const email = req.body.email;
